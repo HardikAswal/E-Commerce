@@ -1,4 +1,15 @@
-.branding{
-  font-size: 50px;
+.productGrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
 }
+
+.adminProducts{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1em;
+}
+
+
+
 

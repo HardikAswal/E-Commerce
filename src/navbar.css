@@ -1,0 +1,15 @@
+.branding{
+    font-size: 50px;
+  }
+
+.nav-mid{
+    margin-left: 35%;
+}
+
+.nav-mid button{
+    margin:10px;
+}
+
+.nav-right{
+    margin-left: 15%;
+}

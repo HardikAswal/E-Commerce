@@ -1,12 +1,34 @@
 import React from 'react';
+import {BrowserRouter as Route,Link} from 'react-router-dom';
 
-function Cart(props){
-    return (
-        <div>
-            <h1>Hello from cart</h1>
-            <h1>{()=>this.props.productName}</h1>
-        </div>    
-    )
+class Cart extends React.Component {
+
+    render(){
+        return (
+            <div>
+                <h1>Cart</h1>
+                
+                <div style={{float:"right"}}>
+                    <button>Buy Now</button>
+                </div>
+
+               <div className="productGrid">
+               {this.props.cart.map((x,i)=><div>
+                <Link to="/Product">
+               <button onClick={(e)=>{this.props.showProduct({x})}}>
+               {<img src={x.picture.file} alt="Product" style={{width:'250px'}}></img>}
+               <div>{x.name}{x.price}</div>
+               </button>
+               </Link>
+               <div>
+               {<button onClick={(e)=>this.props.cartToWishlist({x},i)}>Add to Wishlist</button>}
+               {<button onClick={(e)=>this.props.deleteFromCart(i)}>Delete</button>}
+               </div>
+               </div>)}
+               </div>
+            </div>
+        )
+    }
 }
 
 export default Cart;
